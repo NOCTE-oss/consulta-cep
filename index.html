@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Consulta</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="etiqueta">
+                <img src="img/avedeto-pixel-art-12601_512.gif" alt="logo do Site" class="logo">
+                <p class="etiqueta-texto">Admin do Sistema</p>
+            </div>
+
+            <h1 class="titulo">Bem-vindo(a) ao meu site!</h1>
+            <p class="subtitulo">Descubra onde mora aquele CEP misterioso</p>
+
+        </div>
+
+        <div class="card">
+            <div class="barra-titulo">
+                <span>Correio Virtual 2000.exe</span>
+                <div class="botoes-janela">
+                    <span>_</span>
+                    <span>X</span>
+                </div>
+            </div>
+
+            <form onsubmit="event.preventDefault(); buscarCEP();">
+
+                <label for="cep">CEP: <span class="obrigatorio">*</span></label>
+                <input type="text" id="cep" placeholder="00000-000" maxlength="9" pattern="[0-9]{5}-?[0-9]{3}"
+                    title="Digite o CEP no formato 00000-000" required>
+
+                <button type="submit">Buscar</button>
+
+                <p id="mensagem-erro" class="erro">Ops! Esse CEP não existe. Tente de novo!</p>
+                <p id="carregando" class="carregando"><img src="img/picmix.com_2651772.gif" alt="Carregando..."></p>
+
+                <div id="resultado">
+                    <p>CEP: <span id="res-cep"></span></p>
+                    <p>Rua: <span id="res-rua"></span></p>
+                    <p>Bairro: <span id="res-bairro"></span></p>
+                    <p>Cidade: <span id="res-cidade"></span></p>
+                    <p>Estado: <span id="res-estado"></span></p>
+                </div>
+                <div id="mapa-janela" class="mapa-janela">
+                    <div class="barra-titulo">
+                        <span>Mapa.exe</span>
+                        <div class="botoes-janela">
+                            <span>_</span>
+                            <span>X</span>
+                        </div>
+                    </div>
+                    <iframe id="mapa" width="100%" height="200" style="border: 0;" loading="lazy" src="">
+                    </iframe>
+                </div>
+            </form>
+        </div>
+
+        <p class="visitante">Você é o visitante nº 001337</p>
+
+    </div>
+
+    <script src="JavaScript.js"></script>
+</body>
+
+</html>
